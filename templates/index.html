@@ -1,0 +1,304 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+
+
+<!-- Hero Section -->
+<section id="hero" class="hero section">
+
+  {% if messages %}
+<ul>
+  {% for message in messages %}
+  <li style="color: {% if message.tags == 'error' %}red{% else %}green{% endif %};">
+	{{ message }}
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% endif %}
+  
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+  
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+                <!-- <div class="company-badge mb-4">
+                  <i class="bi bi-gear-fill me-2"></i>
+                  Working for your success
+                </div>   -->
+                
+                <h1 class="mb-4">
+                  Welcome to <br>
+                  <span class="accent-text">KlassicSafaris</span>
+                </h1>
+                <h2 class="mb-4">A Touch of Class and Comfort</h2>
+  
+                <p class="mb-4 mb-md-5">
+                Whether you’re commuting to work, heading out for an adventure, or exploring the city, we got you covered.
+                </p>
+  
+                <div class="hero-buttons">
+                  <a href="{% url 'accounts:login' %}" class="btn btn-primary me-0 me-sm-2 mx-1">Log in</a>
+                  <a href="{% url 'accounts:register' %}" class="btn btn-primary me-0 me-sm-2 mx-1">Register</a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6">
+              <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
+                <img src="{% static 'assets/img/h1.webp' %}" alt="Hero Image" class="img-fluid main-image rounded-4">
+              </div>
+            </div>
+          </div>
+  
+</section><!-- /Hero Section -->
+  
+<!-- About Section -->
+<section id="about" class="about section">
+  
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+  
+          <div class="row gy-4 align-items-center justify-content-between">
+  
+            <div class="col-xl-5" data-aos="fade-up" data-aos-delay="200">
+              <span class="about-meta">MORE ABOUT US</span>
+              <h2 class="about-title">WHAT WE OFFER BEST</h2>
+              <p class="about-description">Welcome to KlassicSafaris, where we redefine the experience of urban and intercity travel. 
+                We are the true definition of; </p>
+  
+              <div class="row feature-list-wrapper">
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-check-circle-fill"></i> Style</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Class</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Comfort</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-check-circle-fill"></i> Safety</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Reliability</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Efficiency</li>
+                  </ul>
+                </div>
+              </div>
+  
+              <div class="info-wrapper">
+                <div class="row gy-4">
+                  <div class="col-lg-5">
+                    <div class="profile d-flex align-items-center gap-3">
+                      <img src="{% static 'assets/img/w2.jpg' %}" alt="CEO Profile" class="profile-image">
+                      <div>
+                        <h4 class="profile-name">Sir Roy</h4>
+                        <p class="profile-position">CEO &amp; Founder</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-7">
+                    <div class="contact-info d-flex align-items-center gap-2">
+                      <i class="bi bi-telephone-fill"></i>
+                      <div>
+                        <p class="contact-label">Call us anytime</p>
+                        <p class="contact-number">+254 759 629 498</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="image-wrapper">
+                <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
+                  <img src="{% static 'assets/img/a1.webp' %}" alt="Business Meeting" class="img-fluid main-image rounded-4">
+                  <img src="{% static 'assets/img/w1.jpg' %}" alt="Team Discussion" class="img-fluid small-image rounded-4">
+                </div>
+                <!-- <div class="experience-badge floating">
+                  <h3>5+ <span>Years</span></h3>
+                  <p>Of experience in business service</p>
+                </div> -->
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+</section><!-- /About Section -->
+  
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section light-background">
+  
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Testimonials</h2>
+          <p>From Our Passengers, With Love!</p>
+        </div><!-- End Section Title -->
+  
+        <div class="container">
+  
+          <div class="row g-5">
+  
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/t4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sarah M.</h3>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Klassic Safaris has truly redefined my travel experience! Their matatus are always punctual, clean, and comfortable. I can count on them for a smooth ride every time. The customer service is also top-notch, always friendly and professional. I highly recommend them!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+  
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/t2.jpg' %}" class="testimonial-img" alt="">
+                <h3>John K.</h3>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>I’ve been using Klassic Safaris for my daily commute, and I couldn't be happier. The matatus are well-maintained, and I always feel safe traveling with them. Their schedule is reliable, and the staff is always courteous. It’s the most hassle-free way to travel around!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+  
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/t3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Lydia A.</h3>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>As a regular passenger, I’ve had nothing but great experiences with Klassic Safaris. The rides are smooth, and they make sure the matatus are in excellent condition. Plus, the affordable fares and friendly drivers make it a great choice every time.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+  
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/t1.jpg' %}" class="testimonial-img" alt="">
+                <h3>David W.</h3>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>I’m always impressed by the punctuality and professionalism of Klassic Safaris. Their team goes above and beyond to ensure comfort and convenience for all passengers. I recommend them to everyone who needs reliable, efficient transport!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+  
+          </div>
+  
+        </div>
+  
+</section><!-- /Testimonials Section -->
+  
+<!-- Contact Section -->
+<section id="contact" class="contact section light-background">
+  
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Contact</h2>
+          <p>Travel Smarter – It Begins with a Hello!</p>
+        </div><!-- End Section Title -->
+  
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+  
+          <div class="row g-4 g-lg-5">
+            <div class="col-lg-5">
+              <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+                <h3>Contact Info</h3>
+                <p>For bookings, enquiries or feedback;</p>  
+                <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                  <div class="icon-box">
+                    <i class="bi bi-geo-alt"></i>
+                  </div>
+                  <div class="content">
+                    <h4>Our Location</h4>
+                    <p>Tom Mboya Street</p>
+                    <p>Nairobi, Kenya</p>
+                  </div>
+                </div>
+    
+                <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                  <div class="icon-box">
+                    <i class="bi bi-telephone"></i>
+                  </div>
+                  <div class="content">
+                    <h4>Phone Number</h4>
+                    <p>+254 759 629 498</p>
+                  </div>
+                </div>
+    
+                <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+                  <div class="icon-box">
+                    <i class="bi bi-envelope"></i>
+                  </div>
+                  <div class="content">
+                    <h4>Email Address</h4>
+                    <p>bookings@klassicsafaris.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-7">
+              <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+                <h3>Get In Touch</h3>
+                <p>Our team is available 24/7 to provide you with the best customer support. We look forward to hearing from you.</p>
+  
+                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row gy-4">
+  
+                    <div class="col-md-6">
+                      <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    </div>
+  
+                    <div class="col-md-6 ">
+                      <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                    </div>
+  
+                    <div class="col-12">
+                      <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    </div>
+  
+                    <div class="col-12">
+                      <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    </div>
+  
+                    <div class="col-12 text-center">
+                      <div class="loading">Loading</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Your message has been sent. Thank you!</div>
+  
+                      <button type="submit" class="btn">Send Message</button>
+                    </div>
+  
+                  </div>
+                </form>
+  
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+</section><!-- /Contact Section -->
+      
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+<div class="login-box" >
+  {% if messages %}
+<ul>
+  {% for message in messages %}
+  <li style="color: {% if message.tags == 'error' %}red{% else %}green{% endif %};">
+	{{ message }}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endif %}
+	<div class="login-header">Login</div>
+	<div class="login-body">
+		<form method = "POST" class="form-group">
+			{% csrf_token %}
+			<input type="hidden" name="next" value="{{ request.GET.next }}">
+			<label>Username</label>
+			<input type="text" class="form-control"  value="{{ request.POST.username|default:'' }}" name="username">
+			<label>Password</label>
+			<input type="password" class="form-control" name="password">
+			<input type="submit"  value="Login" class="form-control btn btn-success" name="login">
+			<br>
+			<p>Don't have an account? <a href="{% url 'accounts:register' %}">Register here</a></p>
+		</form>
+	</div>
+</div>
+
+
+
+  </div>
+</div>
+{% endblock %}

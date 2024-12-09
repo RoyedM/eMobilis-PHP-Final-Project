@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Seat Booking {% endblock %}
+
+{% block content %}
+<!-- Book A Seat Section -->
+<section id="book-a-seat" class="book-a-seat section">
+
+  <!-- Section Title -->
+  <div class="container section-title text-center" data-aos="fade-up">
+    <h2>Book A Seat</h2>
+    <p><span>Book Your</span> <span class="description-title">Journey With Us<br></span></p>
+  </div><!-- End Section Title -->
+
+  <div class="container d-flex justify-content-center">
+
+    <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+      <form method="post" class="w-100">
+        {% csrf_token %}
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <label for="name" class="form-label">Name</label>
+            <input type="name" class="form-control" name="name" id="name" placeholder="Your Name" required="">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="phone" class="form-control" name="phone" id="phone" placeholder="Your Phone" required="">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" name="date" class="form-control" id="date" placeholder="Date" required="">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <label for="time" class="form-label">Time</label>
+            <input type="time" class="form-control" name="time" id="time" placeholder="Time" required="">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <label for="people" class="form-label">People</label>
+            <input type="number" class="form-control" name="people" id="people" placeholder="# of people" required="">
+          </div> 
+          <div class="col-md-4 form-group mt-3">
+            <label for="travel_class" class="form-label">Travel Class</label>
+            <select name="travel_class" id="travel_class" class="form-select" required="">
+              <option value="">Select Class</option>
+              <option value="Economy Class">Economy Class</option>
+              <option value="Comfort Class">Comfort Class</option>
+              <option value="Business Class">Business Class</option>
+            </select>
+          </div>
+          <div class="col-md-4 form-group mt-3">
+            <label for="route" class="form-label">Route</label>
+            <select name="route" id="route" class="form-select" required="">
+              <option value="">Select Route</option>
+              <option value="Nairobi - Mombasa">Nairobi - Mombasa</option>
+              <option value="Mombasa - Nairobi">Mombasa - Nairobi</option>
+              <option value="Nairobi - Kisumu">Nairobi - Kisumu</option>
+              <option value="Kisumu - Nairobi">Kisumu - Nairobi</option>
+              <option value="Nairobi - Meru">Nairobi - Meru</option>
+              <option value="Meru - Nairobi">Meru - Nairobi</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+        </div>
+
+        <div class="text-center mt-3">
+          <!-- <div class="loading">Loading</div> -->
+          <div class="error-message"></div>
+          <!-- <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div> -->
+          <button type="submit" class="btn btn-primary me-0 me-sm-2 mx-1">Book a Seat</button>
+        </div>
+      </form>
+    </div><!-- End Booking Form -->
+
+  </div>
+
+</section>
+<!-- /Book A Seat Section -->
+
+
+
+{% endblock %}

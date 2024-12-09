@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Bookings {% endblock %}
+
+{% block content %}
+<!-- Bookings Section -->
+<section id="bookings" class="bookings section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 align-items-center justify-content-between">
+            <div class="col-12" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="bookings-title">Bookings</h2>
+                <div class="table-responsive">
+                    <table class="table table-light">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>People</th>
+                                <th>Travel Class</th>
+                                <th>Route</th>
+                                <th>Message</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for seat in seat %}
+                            <tr>
+                                <td>{{ seat.name }}</td>
+                                <td>{{ seat.email }}</td>
+                                <td>{{ seat.phone }}</td>
+                                <td>{{ seat.date }}</td>
+                                <td>{{ seat.time }}</td>
+                                <td>{{ seat.people }}</td>
+                                <td>{{ seat.travel_class }}</td>
+                                <td>{{ seat.route }}</td>                               
+                                <td>{{ seat.message }}</td>
+                                <td>
+                                    <a href="{% url 'final_app:update_bookings' seat.id %}" class="btn btn-primary">Edit</a>
+                                    <a href="{% url 'final_app:delete_bookings' seat.id %}" class="btn btn-danger">Delete</a>
+                                    <a href="{% url 'final_app:pay' %}" class="btn btn-success">Pay</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Bookings Section -->
+
+
+{% endblock %}
