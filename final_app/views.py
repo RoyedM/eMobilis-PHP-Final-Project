@@ -57,6 +57,7 @@ def retrieve_bookings(request):
         context = {
             'seat':seat}
         return render(request, 'bookings.html', context)
+
     
     # delete
 def delete_bookings(request, id):
@@ -75,8 +76,8 @@ def update_bookings(request, seat_id):
              seat.email = request.POST.get('email')
              seat.phone = request.POST.get('phone')
              seat.date = request.POST.get('date')
-             seat.time = request.POST.get('time')
              seat.people = request.POST.get('people')
+             seat.time = request.POST.get('time')
              seat.travel_class = request.POST.get('travel_class')
              seat.route = request.POST.get('route')
              seat.message = request.POST.get('message')

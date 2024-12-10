@@ -21,27 +21,35 @@
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6">
             <label for="name" class="form-label">Name</label>
-            <input type="name" class="form-control" name="name" id="name" placeholder="Your Name" required="">
+            <input type="name" class="form-control" name="name" id="name" placeholder="Your Name" value="{{ seat.name }}" required="">
           </div>
           <div class="col-lg-4 col-md-6">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" value="{{ seat.email }}" required="">
           </div>
           <div class="col-lg-4 col-md-6">
             <label for="phone" class="form-label">Phone</label>
-            <input type="phone" class="form-control" name="phone" id="phone" placeholder="Your Phone" required="">
+            <input type="phone" class="form-control" name="phone" id="phone" placeholder="Your Phone" value="{{ seat.phone }}" required="">
           </div>
           <div class="col-lg-4 col-md-6">
             <label for="date" class="form-label">Date</label>
-            <input type="date" name="date" class="form-control" id="date" value="{{ seat.date }}" required>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <label for="time" class="form-label">Time</label>
-            <input type="time" class="form-control" name="time" id="time" value="{{ seat.time }}" required>
+            <input type="date" name="date" class="form-control" id="date" value="{{ seat.date|date:'Y-m-d' }}" required>
           </div>
           <div class="col-lg-4 col-md-6">
             <label for="people" class="form-label">People</label>
             <input type="number" class="form-control" name="people" id="people" value="{{ seat.people }}" placeholder="# of people" required>
+          </div>
+          <div class="col-md-4 form-group mt-3">
+            <label for="time" class="form-label">Departure Time</label>
+            <select name="time" id="time" class="form-select" required="">
+              <option value="">Select Departure Time</option>
+              <option value="0000hrs" {% if seat.time == "0000hrs" %}selected{% endif %}>0000hrs</option>
+              <option value="0400hrs" {% if seat.time == "0400hrs" %}selected{% endif %}>0400hrs</option>
+              <option value="0800hrs" {% if seat.time == "0800hrs" %}selected{% endif %}>0800hrs</option>,
+              <option value="1200hrs" {% if seat.time == "1200hrs" %}selected{% endif %}>1200hrs</option>
+              <option value="1600hrs" {% if seat.time == "1600hrs" %}selected{% endif %}>1600hrs</option>
+              <option value="2000hrs" {% if seat.time == "2000hrs" %}selected{% endif %}>2000hrs</option>
+            </select>
           </div>
           <div class="col-md-4 form-group mt-3">
             <label for="travel_class" class="form-label">Travel Class</label>

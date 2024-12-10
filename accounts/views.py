@@ -2,6 +2,9 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
+from django.contrib.auth import views as auth_views
+
 
 # Create your views here.
 def register (request):
@@ -52,3 +55,12 @@ def login_view(request):
         else:
             messages.error(request, "Wrong Password")
     return render(request,'accounts/login.html')
+
+def logout_view(request):
+    return auth_views.LogoutView.as_view()(request)
+
+def logout_view(request):
+    """Handles logging out the user"""
+    logout(request)  # Logs out the user
+    messages.success(request, "Logout Successful!")  # Show success message
+    return redirect('final_app:home')  # Redirect to the home page or any other page

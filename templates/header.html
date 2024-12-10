@@ -18,8 +18,16 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
+      {% if user.is_authenticated %}
+      <a href="{% url 'accounts:logout' %}" >Logout</a>
+      {% else %}
+      <a href="{% url 'accounts:login' %}" >Login/Register</a>
+      {% endif %}
       <a class="btn-getstarted" href="{% url 'final_app:seat' %}">Book a Seat</a>
 
     </div>
   </header>
+
+
+
+  
